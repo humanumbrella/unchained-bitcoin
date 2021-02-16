@@ -122,7 +122,7 @@ function multisigSignatureHash(network, inputs, outputs, inputIndex) {
  * @param {string} signature - a DER encoded signature string
  * @return {Buffer} signatureBuffer - correctly allocated buffer with relevant r, S information from the encoded signature
  */
-function multisigSignatureBuffer(signature) {
+export function multisigSignatureBuffer(signature) {
   const encodedSignerInputSignatureBuffer = Buffer.from(signature, 'hex');
   const decodedSignerInputSignatureBuffer = bip66.decode(encodedSignerInputSignatureBuffer);
   const {r, s} = decodedSignerInputSignatureBuffer;
